@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<style>
+		.box {
+			transform: translate3d(x, y, z);
+		}
+	</style>
+
+	<script>
+		
+		// mousewheel
+
+		// 切换屏屏幕时，实际利用3D转换，改变Y的移动位置
+		// 结合一个过渡效果
+		// 鼠标滚轮事件
+		// 此事件有兼容性
+		// 不同浏览器使用的事件名称是不一样的
+		document.onmousewheel = function () {
+			console.log(1);
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.section {
+	overflow: hidden;
+	position: relative;
+}
+
+.first {
+	/**/
+}
+
+.first .logo {
+	height: 186px;
+	margin-top: 80px;
+	background: url(../images/logo.png) center no-repeat;
+}
+
+.first .text {
+	text-align: center;
+	margin: 80px 0 60px;
+}
+
+.first .text img {
+	margin: 0 34px;
+	opacity: 0;
+}
+
+.first .extra {
+	height: 50px;
+	background: url(../images/info_1.png) center no-repeat;
+}
+
+/*第一屏动画*/
+.first.current .text img {
+	transition: all 1s ease-in-out;
+	margin: 0 5px;
+	opacity: 1;
+}
+
+.second {
+	/**/
+}
+
+.second > div {
+	padding: 0 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.second .shield {
+	width: 436px;
+	font-size: 0;
+}
+
+.second .shield img:nth-child(1) {
+	transform: translate(100px, -30px) rotate(27deg);
+}
+
+.second .shield img:nth-child(2) {
+	transform: translate(200px, -30px) rotate(40deg);
+}
+
+.second .extra {
+	width: 635px;
+	height: 309px;
+	background: url(../images/info_2.png) center no-repeat;
+}
+
+/*第二屏动画*/
+.second.current .shield img {
+	transition: all 1s ease-in-out;
+	transform: translate(0, 0) rotate(0deg);
+}
+
+/*第三屏*/
+.third {
+	/**/
+}
+
+.third > div {
+	padding: 0 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.third .extra {
+	width: 631px;
+	height: 278px;
+	background: url(../images/info_3.png);
+}
+
+.third .circle {
+	width: 453px;
+	height: 449px;
+	background: url(../images/circle.png);
+}
+
+.third .rocket {
+	width: 203px;
+	height: 204px;
+	background: url(../images/rocket.png);
+
+	position: absolute;
+
+	left: 0;
+	bottom: -204px;
+}
+
+/*第三屏动画*/
+.third.current .rocket {
+	transition: all 1s ease-in-out;
+	transform: translate(1000px, -380px);
+}
+
+/*第四屏*/
+.fourth {
+	/**/
+}
+
+.fourth > div {
+	padding: 0 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.fourth .search {
+	width: 529px;
+	/*height: 400px;*/
+	/*background: pink;*/
+
+	position: relative;
+
+	transform: translateX(-120%);
+}
+
+.fourth .search .bar {
+	width: 100%;
+	height: 66px;
+	background: url(../images/search.png);
+}
+
+.fourth .search .keys {
+	width: 0px;
+	height: 22px;
+	background: url(../images/key.png);
+
+	position: absolute;
+	left: 23px;
+	top: 23px;
+}
+
+.fourth .search .result {
+	width: 100%;
+	height: 372px;
+	overflow: hidden;
+	position: relative;
+	top: -13px;
+}
+
+.fourth .search .result img {
+	transform: translateY(-100%);
+}
+
+.fourth .extra {
+	width: 612px;
+	height: 410px;
+	background: url(../images/info_4.png) no-repeat;
+}
+
+/*第四屏动画*/
+.fourth.current .search {
+	transition: all 1s ease-in-out;
+	transform: translateX(0);
+}
+
+.fourth.current .keys {
+	animation: typing 1s 1.3s steps(5) forwards;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 99px;
+	}
+}
+
+.fourth.current .search .result img {
+	transition: all 1s 2.5s ease-in-out;
+	transform: translateY(0);
+}
+
+/*第五屏*/
+.fifth {
+	/**/
+}
+
+.fifth > div {
+	display: flex;
+	flex-direction: column;
+	/*侧轴默认值*/
+	/*可以让子元素在侧轴方向上，占满父盒子*/
+	/*align-items: stretch;*/
+	align-items: center;
+
+	
+}
+
+.fifth .extra {
+	width: 100%;
+	height: 200px;
+	background: url(../images/info_5.png) center no-repeat;
+}
+
+.fifth .browser {
+	width: 1004px;
+	flex: 1;
+	background: pink;
+
+	position: relative;
+}
+
+.fifth .browser .line {
+	position: absolute;
+}
+
+.fifth .browser .lineleft, 
+.fifth .browser .lineright {
+	width: 0;
+	height: 100%;
+	border-left: 1px solid #FFF;
+	top: 0;
+}
+
+.fifth .browser .lineleft {
+	left: 0;
+	transform: translateY(-100%);
+}
+
+.fifth .browser .lineright {
+	right: 0;
+	transform: translateY(100%);
+}
+
+.fifth .browser .linetop,
+.fifth .browser .linebottom {
+	left: 0;
+	border-top: 1px solid #FFF;
+	width: 100%;
+	height: 0;
+}
+
+.fifth .browser .linetop {
+	top: 0;
+	transform: translateX(100%);
+}
+
+.fifth .browser .linebottom {
+	bottom: 0;
+}
+
+.fifth .browser .toolbar {
+	width: 1004px;
+	height: 79px;
+	background: url(../images/toolbar.png);
+
+	/*position: relative;*/
+
+	opacity: 0;
+}
+
+.fifth .browser .border-box {
+	width: 0px;
+	height: 27px;
+	overflow: hidden;
+	
+	position: absolute;
+	left: 70px;
+	top: 31px;
+}
+
+.fifth .browser .border {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #FFF;
+	box-sizing: border-box;
+	border-radius: 3px;
+}
+
+.fifth .browser .line5 {
+	width: 100%;
+	height: 0;
+	border-top: 1px solid #FFF;
+
+	position: absolute;
+	bottom: 30px;
+}
+
+.fifth .browser .taskbar {
+	width: 100%;
+	height: 29px;
+	position: absolute;
+	bottom: 0;
+
+	opacity: 0;
+	background: url(../images/extra.png) right center no-repeat;
+}
+
+/*第五屏动画*/
+.fifth.current .browser .lineleft {
+	transition: all 1s ease-in-out;
+	transform: translateY(0);
+}
+
+.fifth.current .browser .linetop {
+	transition: all 1s ease-in-out;
+	transform: translateX(0);
+}
+
+.fifth.current .browser .lineright {
+	transition: all 1s ease-in-out;
+	transform: translateY(0);
+}
+
+.fifth.current .browser .toolbar {
+	transition: all 1s ease-in-out;
+	opacity: 1;
+}
+
+.fifth.current .browser .border-box {
+	transition: all 1s ease-in-out;
+	width: 920px;
+}
+
+.fifth.current .browser .taskbar {
+	transition: all 1s ease-in-out;
+	opacity: 1;
+}
+
